@@ -12,3 +12,23 @@
 .QiitaApp-link {
   color: white;
 }
+
+.card-container{
+  display: flex;
+  height: 32px;
+}
+
+.card-text a{
+  color: white;
+  font-size: 15px;
+  line-height: 1em;
+
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.card-text2{
+  font-size: 11px;
+}
