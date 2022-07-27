@@ -95,12 +95,12 @@ function App() {
   const renderImageList = (list) => {
     const posts = list.map((item, index) => {
       return (
-        <li class="item" key={index}>
-          <div class="card-container">
+        <li className="item" key={index}>
+          <div className="card-container">
             <img src={item.user.profile_image_url} width="50" height="50" loading="lazy" alt="img" />
-            <div class="card-text">
+            <div className="card-text">
               <a href={item.url} target="_blank" rel="noreferrer">{item.title}</a>
-              <div class="card-text2">
+              <div className="card-text2">
               <p>{moment(item.created_at).fromNow()}</p>
               </div>
             </div>
@@ -113,10 +113,10 @@ function App() {
 
   // 表示されるHTMLを記述
     return (
-      <div class="App">
-        <header class="QiitaApp-header">
+      <div className="App">
+        <header className="QiitaApp-header">
           <font color="red"><b>{error}</b></font><br />
-          <a class="QiitaApp-link" href="https://mbp.hatenablog.com/entry/2021/08/25/224215" target="_blank" rel="noreferrer">Next.jsでQiitaAPIを使って記事情報を取得して表示 Vercel</a><br />
+          <a className="QiitaApp-link" href="https://mbp.hatenablog.com/entry/2021/08/25/224215" target="_blank" rel="noreferrer">Next.jsでQiitaAPIを使って記事情報を取得して表示 Vercel</a><br />
           <h3>QiitaでReactタグありの記事を表示</h3>
           <br />
           <button onClick={() => {tagButtonClick("react")}}>react</button>
