@@ -9,7 +9,7 @@ function App() {
   const [page, setPage] = useState(1);
   const [postsList, setPostsList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [tag, setTag] = useState('React');
+  const [tag, setTag] = useState('next.js');
   const [error, setError] = useState('');
 
   // 一番下に到達したら handleClick()でページを更新
@@ -117,13 +117,16 @@ function App() {
         <header className="QiitaApp-header">
           <font color="red"><b>{error}</b></font><br />
           <a className="QiitaApp-link" href="https://mbp.hatenablog.com/entry/2021/08/25/224215" target="_blank" rel="noreferrer">Next.jsでQiitaAPIを使って記事情報を取得して表示 Vercel</a><br />
-          <h3>QiitaでReactタグありの記事を表示</h3>
+          <h3>QiitaでNext.jsタグありの記事を表示</h3>
           <br />
-          <button onClick={() => {tagButtonClick("react")}}>react</button>
-          <button onClick={() => {tagButtonClick("swift")}}>swift</button>
-          <button onClick={() => {tagButtonClick("vim")}}>vim</button>
-          <button onClick={() => {tagButtonClick("azure")}}>azure</button>
-          <button onClick={() => {tagButtonClick("aws")}}>aws</button>
+          <button onClick={() => {tagButtonClick("react")}}>React</button>
+          <button onClick={() => {tagButtonClick("next.js")}}>Next.js</button>
+          <button onClick={() => {tagButtonClick("vue.js")}}>Vue.js</button>
+          <button onClick={() => {tagButtonClick("nuxt.js")}}>Nuxt.js</button>
+          <button onClick={() => {tagButtonClick("swift")}}>Swift</button>
+          <button onClick={() => {tagButtonClick("vim")}}>Vim</button>
+          <button onClick={() => {tagButtonClick("azure")}}>Azure</button>
+          <button onClick={() => {tagButtonClick("aws")}}>AWS</button>
           <button onClick={() => {tagButtonClick(".NET")}}>.NET</button>
           <button onClick={() => {tagButtonClick("Flutter")}}>Flutter</button>
           {tag}
