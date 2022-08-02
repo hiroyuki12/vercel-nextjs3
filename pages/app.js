@@ -58,7 +58,8 @@ function App() {
 
   const pageButtonClick = (target) => {
     setPostsList([]);
-    setPage(target);
+    const tmp = parseInt(target,10);
+    setPage(tmp);
     //setTag('Swift');
   }
 
@@ -149,7 +150,6 @@ function App() {
           page:<button onClick={() => {pageButtonClick("1")}}>__1__</button>
           ___:<button onClick={() => {pageButtonClick("10")}}>__10__</button>
           ___:<button onClick={() => {pageButtonClick("50")}}>__50__</button>
-          ___:<button onClick={() => {pageButtonClick("100")}}>__100</button>
           {page}
           <ul>{renderImageList(postsList)}</ul>
 
