@@ -7,8 +7,8 @@
 .QiitaApp-footer {
   position: fixed;
   bottom: 0px;
-  width: 60%;
-  height: 45px;
+  width: 100%;
+  height: 60px;
   background-color: #282c44;
   text-align: center;
   color: white;
