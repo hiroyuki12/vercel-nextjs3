@@ -161,6 +161,7 @@ function App() {
             <>Not Loading. page: {page}/20posts/{20*(page-1)+1}-</>
           )}
         </header>
+        <div className="QiitaApp-footer">{tag} Page {page}/20posts/{20*(page-1)+1}-</div>
       </div>
     )
 }
