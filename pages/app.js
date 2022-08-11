@@ -7,6 +7,7 @@ import moment from 'moment';
 
 function App() {
   const [page, setPage] = useState(1);
+  const [perPage, setPerPage] = useState(20);
   const [postsList, setPostsList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [tag, setTag] = useState('next.js');
@@ -57,6 +58,7 @@ function App() {
   }
 
   const pageButtonClick = (target) => {
+    setPerPage(100);
     setPostsList([]);
     const tmp = parseInt(target,10);
     setPage(tmp);
@@ -64,8 +66,7 @@ function App() {
   }
 
   const handleClick = (target) => {
-    const limit = 20;
-    const url = `https://qiita.com/api/v2/tags/${tag}/items?page=${page}&per_page=${limit}`;
+    const url = `https://qiita.com/api/v2/tags/${tag}/items?page=${page}&per_page=${perPage}`;
     setIsLoading(true);
 
     const headers = {}
@@ -149,20 +150,21 @@ function App() {
           <button onClick={() => {tagButtonClick("Flutter")}}>Flutter</button>
           {tag}<br />
           page:<button onClick={() => {pageButtonClick("1")}}>__1__</button>
+          ___:<button onClick={() => {pageButtonClick("15")}}>__15__</button>
           ___:<button onClick={() => {pageButtonClick("50")}}>__50__</button>
-          ___:<button onClick={() => {pageButtonClick("100")}}>__100__</button>
-          {page}
+          ___:<button onClick={() => {pageButtonClick("90")}}>__90__</button>
+          {page}/{perPage}posts
           <ul>{renderImageList(postsList)}</ul>
 
           Page {page}, tag {tag}, {isLoading}
           <br />
           {isLoading ? (
-            <>Loading .... page: {page}/20posts/{20*(page-1)+1}-</>
+            <>Loading .... page: {page}/{perPage}posts/{perPage*(page-1)+1}-</>
           ) : (
-            <>Not Loading. page: {page}/20posts/{20*(page-1)+1}-</>
+            <>Not Loading. page: {page}/{perPage}posts/{perPage*(page-1)+1}-</>
           )}
         </header>
-        <div className="QiitaApp-footer">{tag} Page {page}/20posts/{20*(page-1)+1}-</div>
+        <div className="QiitaApp-footer">{tag} Page {page}/{perPage}posts/{perPage*(page-1)+1}-</div>
       </div>
     )
 }
