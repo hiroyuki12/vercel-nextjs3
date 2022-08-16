@@ -3,7 +3,7 @@
     "background_color": "#f69435",
     "display": "standalone",
     "scope": "/",
-    "start_url": "/app",
+    "start_url": "/",
     "name": "vercel-nextjs3",
     "short_name": "Next.js",
     "icons": [
